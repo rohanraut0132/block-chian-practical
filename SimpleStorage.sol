@@ -2,9 +2,9 @@ pragrma solidity ^0.6.0;
 
 contract SimpleStorage {
     //int256 id = 1;
-    //int256 Userid = 12;
+    //int256 Userid = 32;
     //bool status = true;
-    //string name = "Drashti";
+    //string name = "rohan";
     //address useraddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
     //bytes64
 
@@ -20,7 +20,7 @@ contract SimpleStorage {
     }
 
     People[] public people;
-    // People public person = People({favoriteNumber:1,name:"Drashti"});
+    // People public person = People({favoriteNumber:1,name:"rohan"});
     mapping(string => uint256) public nameTofavoriteNumber;
 
     function store(uint256 _favoriteNumber) public {
