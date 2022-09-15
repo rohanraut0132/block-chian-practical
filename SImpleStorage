@@ -1,65 +1,38 @@
-// SPDX -License- Identifier:MIT
-
 pragma solidity ^0.6.0;
 
-contract SimpleStorage{
+contract SimpleStorage {
+    //int256 id = 1;
+    //int256 Userid = 32;
+    //bool status = true;
+    //string name = "rohan";
+    //address useraddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
+    //bytes64
 
-    uint256  favoriteNumber;
+    //this will get init
 
-    bool favoriteBool;
+    uint256 favoriteNumber;
+   // bool favoriteNumber;
+    string name;
 
- 
-
-    struct people
-
-    {
-
+    struct People{
         uint256 favoriteNumber;
-
         string name;
-
     }
 
  
-
-    people[] public person;
-
-   
-
-   mapping(string => uint256)public nameTofavoriteNumber;
-
-    function store(uint256 _favoriteNumber)public{
-
-        favoriteNumber= _favoriteNumber;
-
+    People[] public people;
+    People public person = People({favoriteNumber:1,name:"rohan"});
+    mapping(string => uint256) public nameTofavoriteNumber;
+    function store(uint256 _favoriteNumber) public {
+         favoriteNumber = _favoriteNumber;
     }
-
- 
-
-    //view or public
-
-    function retrieve() public view returns(uint256){
-
-      return favoriteNumber;
-
+    //view
+    function retrieve() public view returns(uint256) {
+        return favoriteNumber;
     }
-
- 
-
-    //array
-
-    // u can use memory is faster or storage is slower
-
-    function addperson(string memory _name,uint256 _favoriteNumber)public{
-
-        person.push(people(_favoriteNumber,_name));
-
-        nameTofavoriteNumber[_name]=_favoriteNumber;
-
+    function addperson(string memory _name, uint256 _favoriteNumber) public {
+        people.push(People(_favoriteNumber, _name));
+        nameTofavoriteNumber[_name] = _favoriteNumber;
     }
-
- 
-
-   
-
+    
 }
